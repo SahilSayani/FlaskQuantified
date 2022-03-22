@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}createPost{% endblock %}
+{% block content %}
+
+<h1 align="center">Edit Post</h1>
+<form method="POST" >
+    <textarea name="text" id="text" class="form-control"></textarea>
+    <br />
+    <label style="padding-top: 10px" for="type">Workout Type</label>
+                        <select style="width: 300px;border-radius: 15px; text-align: center" id="type"  class="form-control"  name="type" required>
+                            <option value="Cardio">Cardio</option>
+                            <option value="Strength Training">Strength Training</option>
+                            <option value="Functional Training">Functional Training</option>
+                            <option value="MMA">MMA</option>
+
+
+                        </select>
+    <br />                    
+    <div align="center">
+        <button type="submit" class="btn btn-lg btn-primary">Confirm Edit</button>
+    </div>
+</form>
+<br />
+<div align="center">
+    <a href="/home"><button type="button" class="btn btn-lg btn-secondary">Back</button></a>
+</div>
+{% endblock %}

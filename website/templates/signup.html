@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}Signup{% endblock %}
+{% block content %}
+<link rel="stylesheet" href="../static/register.css" />
+<div class="login-page">
+    <div class="form" >
+      <form method="POST">
+        <br><br>
+        <h1 class="heading">Sign up</h1>
+        <label for="username">Username</label>
+        <input
+          type="text"
+          name="username"
+          placeholder="Enter your username..."
+          required=""
+          value=""
+        />
+        <br />
+        <label for="email">Email</label>
+        <input
+          type="email"
+          name="email"
+          placeholder="Enter your email..."
+          required=""
+          value=""
+        />
+        <br />
+        <label for="password1">Password</label>
+        <input
+          type="password"
+          name="password1"
+          id="password1"
+          placeholder="Create a password..."
+          required=""
+          value=""
+          class="form-control"
+        />
+        
+        <label for="password2">Confirm password</label>
+        <input
+          type="password"
+          name="password2"
+          id="password2"
+          placeholder="Confirm your password..."
+          required=""
+          value=""
+          class="form-control"
+        />
+        <br />
+        <input class="submit-button" type="submit" value="Sign up" />
+        <div class="bottom-text">
+          <p>Already have an account?</p>
+          <a class="link" href="/login">Log In</a>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock %}

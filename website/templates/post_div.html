@@ -1,0 +1,77 @@
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+    %}
+    <h1 align="center">{% block header %}Trackers{% endblock %}</h1>
+    <div id="posts">
+      {% for post in posts %}
+      <div class="card border-dark">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <a href="/posts/{{post.user.username}}">{{post.user.username}}</a>
+          {% if user.id == post.author %}
+          <div class="btn-group">
+            <button
+              type="button"
+              class="btn btn-sm btn-danger dropdown-toggle"
+              data-bs-toggle="dropdown"
+            ></button>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="/delete-post/{{post.id}}" class="dropdown-item">Delete</a>
+                <a href="/edit-post/{{post.id}}" class="dropdown-item">Edit</a>
+              </li>
+            </ul>
+          </div>
+          {% endif %}
+        </div>
+        <div class="card-body">
+          <div class="card-text">{{post.text}}</div>
+          <div class="card-text">{{post.tracker_type}}</div>
+          <div><a href="{{ url_for('views.add_log', id=post.id) }}" class="btn" style="border-radius: 15px; font-size: 20px">✚</a></div>
+          
+        </div>
+        <div class="card-footer text-muted">{{post.date_created}}</div>
+      </div>
+      <br/ > {% endfor %}
+    </div>
+    <!--  -->
+    <!-- <div class="row" style="margin-top: 2.5%;">
+        <div class="offset-md-2 col-md-4">
+          <div class="card">
+            <div class="card-header">
+              <div class="float-left" style="font-size:1.5rem;">Recent Sessions:</div>
+              <a class="btn btn-warning float-right text-white"><i class="fas fa-record-vinyl"></i> Record a session</a>
+            </div>
+            <div class="card-body">
+      
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-header">
+              <div class="float-left" style="font-size:1.5rem;">Workout trackers:</div>
+              <a class="btn btn-success float-right text-white" href=""><i class="fas fa-plus-circle"></i> Create new tracker</a>
+            </div>
+            <div class="card-body">
+      
+            </div>
+          </div>
+        </div>
+      </div> -->
+    <!--  -->
+    {% block footer %}
+    <div align="center">
+      <a href="/create-post"
+        ><button type="button" class="btn btn-primary btn-lg">
+          Create a Tracker
+        </button></a
+      >
+    </div>
+
+
+
+   
+      
+
+    {% endblock %} 
+    {% endblock %}

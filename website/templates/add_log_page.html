@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title %}Add Log{% endblock %}
+{% block content %}
+<h2 align="left" class="text-black");"> {{ user.username }}'s Log</h1>
+
+<form method="post">
+    <h3 align="center"></h3>
+    <div class="form-group">
+
+        <h2>Log for post #{{Post.id}}</h2>
+
+        <div align="center">
+
+            <br>
+
+             <label for="date">When: </label>
+        <input
+            type="datetime-local"
+            class="form-control"
+            id="date"
+            name="date"
+            style="width: 300px; border-radius: 15px; text-align: center"
+            value="{{now}}"
+            required
+        />
+        
+
+            <label for="notes">Notes: </label>
+        <textarea
+            class="form-control"
+            id="notes"
+            name="notes"
+            placeholder="Enter log notes"
+            maxlength="200"
+            style="width: 300px; border-radius: 15px; text-align: center"
+            required
+        ></textarea>
+
+
+            <br>
+            <button type="submit" class="btn btn-warning"><b> Add Log</b></button>
+
+        </div>
+
+
+    </div>
+</form>
+
+{% endblock %}
